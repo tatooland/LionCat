@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB18030">
+<title>Insert title here</title>
+</head>
+<body>
+	<p id='loginInfo'></p>
+	<input type="text" value="" placeholder="说点什么..."/>
+	<input type='button' value="发送"/>
+</body>
+<script type="text/javascript" src="http://localhost/mini/page_candy/jquery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="http://localhost/mini/nodejs/node_modules/socket.io/node_modules/socket.io-client/socket.io.js"></script>
+<script type="text/javascript">
+	var server=io("http://localhost:1777");
+	/*
+	server.on('news',function(data){
+		//alert(data.hello);
+		server.emit('event1',{my:'data'});
+	});*/
+	//triggle because of server
+	server.on('login_ok',function(){
+		$("#loginInfo").text("已上线");
+	});
+	
+	function login(){
+		server.emit("login",{id:4});
+	}
+	function sendMsg(msg,sendTo){
+		server.emit("send_msg",{msg:msg,receiver:sendTo});
+	}
+</script>
+</html>

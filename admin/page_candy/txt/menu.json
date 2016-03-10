@@ -1,0 +1,13 @@
+[
+	{"l":"控制面板","t":"single","link":"index.php?route=common/home"},
+	{"l":"内容管理","t":"group","o":[
+									{"l":"产品上下架","t":"single","link":"index.php?route=mgr/productPublish"},
+									{"l":"广告上下架","t":"single","link":"javascript:void(0)"},
+									{"l":"软文上下架","t":"single","link":"javascript:void(0)"}
+								]
+	},
+	{"l":"数据统计","t":"group","o":[
+									{"l":"产品访问排名","t":"single","link":"javascript:void(0)"}
+								]
+	}
+]
